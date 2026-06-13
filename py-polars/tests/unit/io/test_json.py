@@ -20,8 +20,9 @@ from polars.datatypes.group import FLOAT_DTYPES
 if TYPE_CHECKING:
     from pathlib import Path
 
-import orjson
+
 import pytest
+osjson = pytest.importorskip("orjson")
 
 import polars as pl
 from polars.exceptions import ComputeError

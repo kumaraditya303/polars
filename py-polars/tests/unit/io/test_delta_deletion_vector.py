@@ -13,6 +13,7 @@ import pyarrow as pa
 import pyarrow.compute as pc
 import pyarrow.parquet as pq
 import pytest
+pytest.importorskip("deltalake")
 from deltalake import DeltaTable
 from pyroaring import BitMap  # type: ignore[import-not-found]
 

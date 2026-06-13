@@ -10,6 +10,7 @@ from typing import TYPE_CHECKING, Any
 
 import pyarrow as pa
 import pytest
+pytest.importorskip("deltalake")
 from deltalake import DeltaTable, write_deltalake
 from deltalake.exceptions import DeltaError, TableNotFoundError
 from deltalake.table import TableMerger
