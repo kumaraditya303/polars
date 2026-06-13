@@ -75,7 +75,7 @@ moto[s3]==5.0.9
 flask
 flask-cors
 
-# Stub files
-pandas-stubs
-boto3-stubs
-google-auth-stubs
+# # Stub files
+# pandas-stubs
+# boto3-stubs
+# google-auth-stubs
