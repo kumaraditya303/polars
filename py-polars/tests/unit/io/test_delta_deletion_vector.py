@@ -568,7 +568,7 @@ def test_scan_delta_dv_single(
     assert_frame_equal(out, expected)
 
     # duckdb cross-check
-    import duckdb
+    duckdb = pytest.importorskip("duckdb")
 
     conn = duckdb.connect()
     df_duckdb = conn.execute(f"SELECT * FROM delta_scan('{path}')").pl()
@@ -675,7 +675,7 @@ def test_scan_delta_dv_multiple(
     assert_frame_equal(out, expected, check_row_order=False)
 
     # duckdb cross-check
-    import duckdb
+    duckdb = pytest.importorskip("duckdb")
 
     conn = duckdb.connect()
     df_duckdb = conn.execute(f"SELECT * FROM delta_scan('{path}')").pl()
@@ -702,7 +702,7 @@ def test_scan_delta_dv_multiple_with_predicate_pushdown(
     plmonkeypatch: PlMonkeyPatch,
     capfd: pytest.CaptureFixture[str],
 ) -> None:
-    import duckdb
+    duckdb = pytest.importorskip("duckdb")
 
     plmonkeypatch.setenv("POLARS_VERBOSE", "1")
 
